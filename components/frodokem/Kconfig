@@ -1,0 +1,25 @@
+menu "FrodoKEM Configuration"
+    choice FRODO_VARIANT
+        prompt "FrodoKEM Variant"
+        default USE_FRODO640
+        config USE_FRODO640
+            bool "FrodoKEM-640"
+        config USE_FRODO976
+            bool "FrodoKEM-976"
+        config USE_FRODO1344
+            bool "FrodoKEM-1344"
+    endchoice
+
+    config FRODOKEM_USE_AES
+        bool "Enable AES."
+        default y
+        help
+            This enables AES for matrix A generation.
+
+    config FRODOKEM_USE_SINGLECORE
+        bool "Single core only."
+        default n
+        help
+            This disable dual core optimization.
+
+endmenu
